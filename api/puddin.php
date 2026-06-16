@@ -1,17 +1,17 @@
 <?php
-$kechidlinki="https://reffpa.com/L?tag=d_5444960m_1599c_&site=5444960&ad=1599&r=registration";
+$kechidlinki="https://refpa86112.pro/L?tag=s_4942085m_6741c_&site=4942085&ad=6741";
 $promokod="TEZVIP";
 $instagram="";
 $telegram="";
-$ioslink="https://reffpa.com/L?tag=d_5444960m_1599c_&site=5444960&ad=1599&r=registration";
+$ioslink="https://refpa86112.pro/L?tag=s_4942085m_6741c_&site=4942085&ad=6741";
 $androidlink="https://reffpa.com/L?tag=d_5444960m_45361c_&site=5444960&ad=45361";
 $email="support@1xbet.com";
-$indirlink="https://reffpa.com/L?tag=d_5444960m_1599c_&site=5444960&ad=1599&r=registration";
-$aviator="https://reffpa.com/L?tag=d_5444960m_1599c_&site=5444960&ad=1599&r=registration";
-$sport="https://reffpa.com/L?tag=d_5444960m_1599c_&site=5444960&ad=1599&r=registration";
-$livecasino="https://reffpa.com/L?tag=d_5444960m_1599c_&site=5444960&ad=1599&r=registration";
-$GatesofOlympus="https://reffpa.com/L?tag=d_5444960m_1599c_&site=5444960&ad=1599&r=registration";
-$SweetBonanza="https://reffpa.com/L?tag=d_5444960m_1599c_&site=5444960&ad=1599&r=registration";
+$indirlink="https://refpa86112.pro/L?tag=s_4942085m_6741c_&site=4942085&ad=6741";
+$aviator="https://refpa86112.pro/L?tag=s_4942085m_6741c_&site=4942085&ad=6741";
+$sport="https://refpa86112.pro/L?tag=s_4942085m_6741c_&site=4942085&ad=6741";
+$livecasino="https://refpa86112.pro/L?tag=s_4942085m_6741c_&site=4942085&ad=6741";
+$GatesofOlympus="https://refpa86112.pro/L?tag=s_4942085m_6741c_&site=4942085&ad=6741";
+$SweetBonanza="https://refpa86112.pro/L?tag=s_4942085m_6741c_&site=4942085&ad=6741";
 
 
 //<?=$kechidlinki;
