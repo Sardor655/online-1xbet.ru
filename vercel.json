@@ -8,10 +8,10 @@
   },
   "redirects": [
     { "source": "/index.php", "destination": "/", "permanent": true },
-    { "source": "/:page(en|az|tr|uz)\\.php", "destination": "/:page", "permanent": true }
+    { "source": "/:page(en|az|tr|uz).php", "destination": "/:page", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/(en|az|tr|uz)", "destination": "/api/$1.php" },
+    { "source": "/:lang(en|az|tr|uz)", "destination": "/api/:lang.php" },
     { "source": "/", "destination": "/api/index.php" },
     { "source": "/(.*)", "destination": "/api/404.php" }
   ]
