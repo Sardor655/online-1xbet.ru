@@ -1,0 +1,22 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /register/
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+
+# Block common tracking parameters (avoid duplicate URLs)
+Disallow: /*?utm_
+Disallow: /*&utm_
+Disallow: /*?gclid=
+Disallow: /*&gclid=
+Disallow: /*?fbclid=
+Disallow: /*&fbclid=
+Disallow: /*?yclid=
+Disallow: /*&yclid=
+Disallow: /*?_openstat=
+Disallow: /*&_openstat=
+
+Allow: /
+
+Sitemap: https://online-1xbet.ru/sitemap.xml

@@ -1,0 +1,85 @@
+AddDefaultCharset UTF-8
+ErrorDocument 404 /404.php
+
+# SEO / Canonical redirects & performance (no UI changes)
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Strip common tracking parameters (avoid duplicate URLs)
+RewriteCond %{QUERY_STRING} (^|&)utm_[^&]+ [NC,OR]
+RewriteCond %{QUERY_STRING} (^|&)gclid= [NC,OR]
+RewriteCond %{QUERY_STRING} (^|&)fbclid= [NC,OR]
+RewriteCond %{QUERY_STRING} (^|&)yclid= [NC,OR]
+RewriteCond %{QUERY_STRING} (^|&)_openstat= [NC]
+RewriteRule ^ %{REQUEST_URI}? [R=301,L]
+
+# Force HTTPS and non-www
+RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:\d+)?$ [NC]
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.online-1xbet\.ru$ [NC]
+RewriteRule ^ https://online-1xbet.ru%{REQUEST_URI} [L,R=301]
+
+# Canonical: remove index.php
+RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:\d+)?$ [NC]
+RewriteCond %{THE_REQUEST} \s/+index\.php[?\s] [NC]
+RewriteRule ^index\.php$ https://online-1xbet.ru/ [L,R=301]
+
+# Canonical: remove *.php for public language pages
+RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:\d+)?$ [NC]
+RewriteCond %{THE_REQUEST} \s/+(en|az|tr|uz)\.php[?\s] [NC]
+RewriteRule ^(en|az|tr|uz)\.php$ https://online-1xbet.ru/$1 [L,R=301]
+
+# Remove trailing slash (except real directories)
+RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:\d+)?$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ $1 [L,R=301]
+
+# Pretty URLs -> PHP files
+RewriteRule ^$ index.php [L]
+RewriteRule ^en$ en.php [L]
+RewriteRule ^az$ az.php [L]
+RewriteRule ^tr$ tr.php [L]
+RewriteRule ^uz$ uz.php [L]
+</IfModule>
+
+# Basic security: block hidden/config files
+<FilesMatch "(^\.|\.ini$|\.log$|\.env$|composer\.(json|lock)$)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain text/css text/html text/javascript application/javascript application/json application/xml text/xml image/svg+xml
+</IfModule>
+
+# Browser caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 30 days"
+  ExpiresByType application/javascript "access plus 30 days"
+  ExpiresByType text/javascript "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType application/font-woff2 "access plus 180 days"
+</IfModule>
+
+# Security headers (server-side; complements meta tags)
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>
