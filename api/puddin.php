@@ -1,6 +1,6 @@
 <?php
 $kechidlinki="https://reffpa.com/L?tag=d_5444960m_1599c_&site=5444960&ad=1599&r=registration";
-$promokod="awardp";
+$promokod="TEZVIP";
 $instagram="";
 $telegram="";
 $ioslink="https://reffpa.com/L?tag=d_5444960m_1599c_&site=5444960&ad=1599&r=registration";
